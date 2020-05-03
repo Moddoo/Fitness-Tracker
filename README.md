@@ -1,5 +1,5 @@
 
-# ReadMe Generator
+# Fitness_Tracker
 
 ## Description
 
