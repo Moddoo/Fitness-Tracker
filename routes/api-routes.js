@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const db = require('../models')
 
 router
-   .route(['/', '/range'])
+   .route(['/', '/range', '/:id'])
 
    .get((req,res) => {
        db.Workout
@@ -24,9 +24,9 @@ router
                 if(err) throw err;
                 res.status(400).json(err)
              })
-    });
+    })
 
-router.put('/:id', (req,res) => {
+    .put((req,res) => {
     db.Workout.update({
         _id: mongoose.Types.ObjectId(req.params.id)
     },
