@@ -17,7 +17,7 @@ app.use(express.static('public'));
 app.use(htmlRouter)
 app.use('/api/workouts',apiRouter)
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", { useNewUrlParser: true, useUnifiedTopology: true});
 
 
 app.listen(port, () => console.log(`listening to ${port}!`))
